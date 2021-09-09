@@ -9,6 +9,7 @@ namespace DevelopmentTestCrud.Helpers
         public AutoMapperProfiles()
         {
             CreateMap<Customer, CustomerDto>().ReverseMap();
+            CreateMap<CreateCustomerDto, Customer>();
         }
     }
 }
