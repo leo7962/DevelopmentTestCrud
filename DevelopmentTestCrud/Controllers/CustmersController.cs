@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace DevelopmentTestCrud.Controllers
 {
     [ApiController]
-    [Route("api/clientes")]
+    [Route("api/[controller]")]
     public class CustmersController : ControllerBase
     {
         private readonly ApplicationDbContext dbContext;
@@ -66,7 +66,7 @@ namespace DevelopmentTestCrud.Controllers
         }
 
         [HttpDelete("{id}", Name = "eliminar")]
-        public async Task<ActionResult> Delete (int id)
+        public async Task<ActionResult> Delete(int id)
         {
             var exist = await dbContext.Customers.AnyAsync(x => x.Id == id);
 
